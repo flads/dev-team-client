@@ -1,6 +1,6 @@
-import { IconProps } from '../../interfaces/props.interface';
+import { ClickableIcon } from '../../interfaces/components/icons.interface';
 
-function HomeIcon({ onClick }: IconProps) {
+function Home({ onClick }: ClickableIcon) {
   return (
     <svg
       className="w-8"
@@ -20,4 +20,4 @@ function HomeIcon({ onClick }: IconProps) {
   );
 }
 
-export default HomeIcon;
+export default Home;

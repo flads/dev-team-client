@@ -1,4 +1,4 @@
-import { Clickable } from './common.interface';
+import { Clickable } from '../common.interface';
 
 export interface ClickableIcon {
   onClick?: Clickable;

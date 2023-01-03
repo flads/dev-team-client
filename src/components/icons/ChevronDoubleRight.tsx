@@ -1,6 +1,6 @@
-import { IconProps } from '../../interfaces/props.interface';
+import { ClickableIcon } from '../../interfaces/components/icons.interface';
 
-function ChevronDoubleRight({ onClick }: IconProps) {
+function ChevronDoubleRight({ onClick }: ClickableIcon) {
   return (
     <svg
       className="w-4 sm:w-6 hover:animate-ping"
