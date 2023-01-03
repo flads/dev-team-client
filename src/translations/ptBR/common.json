@@ -1,0 +1,20 @@
+{
+    "action": "Ação",
+    "age": "Idade",
+    "birthdate": "Date de Nascimento",
+    "edit": "Editar",
+    "gender": "Sexo",
+    "hobby": "Hobby",
+    "level_id": "Id do nível",
+    "level": "Nível",
+    "name": "Nome",
+    "search": "Pesquisar",
+    "users": {
+        "edit_one": "Editar Usuário",
+        "no_records": "Não há registros de usuários!",
+        "per_page": "Usuários por página",
+        "plural_form": "Usuários",
+        "search_for": "Pesquisar por usuários",
+        "singular_form": "Usuário"
+    }
+}
