@@ -9,8 +9,8 @@ function Table({ columnNames, rows, modelName }: TableProps) {
   return (
     <div>
       <div className="flex flex-col sm:flex-row items-center sm:items-start sm:justify-between">
-        <SetPagination />
-        <Search />
+        <SetPagination modelName={modelName} />
+        <Search modelName={modelName} />
       </div>
 
       <div className="overflow-x-auto relative shadow-md sm:rounded-lg">

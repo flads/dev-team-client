@@ -30,7 +30,7 @@ function Users() {
   return (
     <Layout>
       <div className="mt-10">
-        <Table columnNames={columnNames} rows={users} modelName="User" />
+        <Table columnNames={columnNames} rows={users} modelName="users" />
       </div>
     </Layout>
   );

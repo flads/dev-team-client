@@ -1,8 +1,11 @@
-import { TableBodyProps } from '../../interfaces/components/table.interface';
 import { ObjectLiteral } from '../../interfaces/object-literal';
+import { TableBodyProps } from '../../interfaces/components/table.interface';
+import { useTranslation } from 'react-i18next';
 import Row from './Row';
 
 function TableBody({ rows, columnNames, modelName }: TableBodyProps) {
+  const { t } = useTranslation('common');
+
   return rows.length ? (
     <tbody>
       {rows.map((row: ObjectLiteral) => {
@@ -19,7 +22,7 @@ function TableBody({ rows, columnNames, modelName }: TableBodyProps) {
   ) : (
     <tbody>
       <tr className="flex justify-center w-full text-sm p-4">
-        <td>No {modelName}s.</td>
+        <td>{t(`${modelName}.no_records`)}</td>
       </tr>
     </tbody>
   );

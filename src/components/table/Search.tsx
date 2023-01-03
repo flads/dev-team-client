@@ -1,8 +1,13 @@
-function Search() {
+import { SearchProps } from '../../interfaces/components/table.interface';
+import { useTranslation } from 'react-i18next';
+
+function Search({ modelName }: SearchProps) {
+  const { t } = useTranslation('common');
+
   return (
     <div className="flex justify-end mb-4">
       <label htmlFor="table-search" className="sr-only">
-        Search
+        {t('search')}
       </label>
       <div className="relative">
         <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
@@ -24,7 +29,7 @@ function Search() {
           type="text"
           id="table-search-users"
           className="block p-2 pl-10 mt-2 sm:mt-0 w-full sm:w-80 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          placeholder="Search for users"
+          placeholder={t(`${modelName}.search_for`) || ''}
         />
       </div>
     </div>

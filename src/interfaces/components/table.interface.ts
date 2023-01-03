@@ -28,3 +28,11 @@ export interface ColumnProps {
   sort?: boolean;
   onClick?: MouseEventHandler<HTMLDivElement>;
 }
+
+export interface SetPaginationProps {
+  modelName: string;
+}
+
+export interface SearchProps {
+  modelName: string;
+}

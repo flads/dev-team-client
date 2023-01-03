@@ -1,10 +1,14 @@
+import { SetPaginationProps } from '../../interfaces/components/table.interface';
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import Button from '../Button';
+import ChevronDown from '../icons/ChevronDown';
 import DropdownItem from '../DropdownItem';
 import DropdownList from '../DropdownList';
-import ChevronDown from '../icons/ChevronDown';
 
-function SetPagination() {
+function SetPagination({ modelName }: SetPaginationProps) {
+  const { t } = useTranslation('common');
+
   const [openDropdown, setOpenDropdown] = useState(false);
 
   useEffect(() => {
@@ -45,7 +49,7 @@ function SetPagination() {
     <div className="relative inline-block text-left" id="dropdown">
       <div>
         <Button onClick={() => setOpenDropdown(!openDropdown)}>
-          Usuários por página <ChevronDown />
+          {t(`${modelName}.per_page`)} <ChevronDown />
         </Button>
       </div>
       {openDropdown && (
