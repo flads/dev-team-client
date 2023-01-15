@@ -9,7 +9,7 @@ function Row({ model, columnNames, modelName }: RowProps) {
       {columnNames.map((name) => {
         return (
           <td key={name} className="py-4 px-6">
-            {model[name]}
+            {model[name] || '-'}
           </td>
         );
       })}

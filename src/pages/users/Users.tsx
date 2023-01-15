@@ -9,7 +9,7 @@ function Users() {
 
   const [users, setUsers] = useState<User[]>([]);
   const [usersCount, setUsersCount] = useState<number>(0);
-  const [take, setPagination] = useState<number>(initialPagination);
+  const [take, setTake] = useState<number>(initialPagination);
   const [skip, setSkip] = useState<number>(0);
   const [search, setSearch] = useState<string | null>(null);
 
@@ -43,10 +43,6 @@ function Users() {
     setUsersCount(response.count);
   };
 
-  const goToPage = async (page: number) => {
-    setSkip((page - 1) * users.length);
-  };
-
   return (
     <Layout>
       <div className="mt-10">
@@ -58,8 +54,8 @@ function Users() {
           skip={skip}
           totalRowsCount={usersCount}
           initialPagination={initialPagination}
-          goToPage={(page) => goToPage(page)}
-          setPagination={(pagination) => setPagination(pagination)}
+          goToPage={(page) => setSkip((page - 1) * take)}
+          setPagination={(pagination) => setTake(pagination)}
           onSearch={(event) => setSearch(event.target.value)}
         />
       </div>
