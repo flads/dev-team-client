@@ -6,6 +6,7 @@ import TableHead from './TableHead';
 import TableBody from './TableBody';
 
 function Table({
+  styles,
   columnNames,
   pageRows,
   take,
@@ -19,7 +20,7 @@ function Table({
   const rowsCount = pageRows.length;
 
   return (
-    <div>
+    <div className={styles}>
       <div className="flex flex-col sm:flex-row items-center sm:items-start sm:justify-between">
         {rowsCount ? (
           <SetPagination

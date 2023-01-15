@@ -1,5 +1,5 @@
 import { LayoutProps } from '../interfaces/components/layout.interface';
-import LoadingPage from './Layout/LoadingPage';
+import LoadingPage from './layout/LoadingPage';
 import Nav from '../components/Nav';
 
 function Layout({ loading, children }: LayoutProps) {

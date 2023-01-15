@@ -1,6 +1,7 @@
 import { ObjectLiteral } from '../object-literal';
 
 export interface TableProps {
+  styles?: string;
   columnNames: string[];
   pageRows: ObjectLiteral[];
   take: number;

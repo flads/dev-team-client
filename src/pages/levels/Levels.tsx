@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import * as LevelsAPI from '../../services/levels/api';
 import Layout from '../../components/Layout';
 import Table from '../../components/table/Table';
+import Title from '../../components/Title';
 
 function Levels() {
   const modelName = 'levels';
@@ -52,23 +53,23 @@ function Levels() {
 
   return (
     <Layout loading={loading}>
-      <div className="mt-10">
-        <Table
-          columnNames={columnNames}
-          pageRows={levels}
-          modelName={modelName}
-          take={take}
-          skip={skip}
-          totalRowsCount={levelsCount}
-          initialPagination={initialPagination}
-          goToPage={(page) => setSkip((page - 1) * take)}
-          setPagination={(pagination) => {
-            setTake(pagination);
-            setSkip(0);
-          }}
-          onSearch={(event) => setSearch(event.target.value)}
-        />
-      </div>
+      <Title>{t('levels.plural_form')}</Title>
+      <Table
+        styles="mt-10"
+        columnNames={columnNames}
+        pageRows={levels}
+        modelName={modelName}
+        take={take}
+        skip={skip}
+        totalRowsCount={levelsCount}
+        initialPagination={initialPagination}
+        goToPage={(page) => setSkip((page - 1) * take)}
+        setPagination={(pagination) => {
+          setTake(pagination);
+          setSkip(0);
+        }}
+        onSearch={(event) => setSearch(event.target.value)}
+      />
     </Layout>
   );
 }
