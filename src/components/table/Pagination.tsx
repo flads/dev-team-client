@@ -82,11 +82,15 @@ function Pagination({
     if (rowsCount !== totalRowsCount) {
       pages = [-1, 0, 1].map((position) => currentPage + position).sort();
 
-      pages = pages.filter((page) => page && page <= pageCount);
-
-      if (currentPage === 1 && pageCount >= 3) {
+      if (currentPage === 1) {
         pages.push(3);
       }
+
+      if (currentPage === pageCount) {
+        pages.unshift(pageCount - 2);
+      }
+
+      pages = pages.filter((page) => page && page <= pageCount);
 
       if (!pages.includes(pageCount)) {
         pages.push('...');
