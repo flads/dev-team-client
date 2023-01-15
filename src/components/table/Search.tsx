@@ -28,7 +28,7 @@ function Search({ modelName, onSearch }: SearchProps) {
         </div>
         <input
           type="text"
-          id="table-search-users"
+          id="table-search-developers"
           className="block p-2 pl-10 mt-2 sm:mt-0 w-full sm:w-80 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 select-none"
           placeholder={t(`${modelName}.search_for`) || ''}
           onChange={_.debounce(onSearch, 500)}

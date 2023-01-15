@@ -1,22 +1,23 @@
 import { getItemFromLocalStorage } from '../../services/local-storage';
 import { useEffect, useState } from 'react';
-import { User } from '../../interfaces/users.interface';
+import { Developer } from '../../interfaces/developers.interface';
 import { useTranslation } from 'react-i18next';
-import * as UsersAPI from '../../services/users/api';
+import * as DevelopersAPI from '../../services/developers/api';
 import Layout from '../../components/Layout';
 import Table from '../../components/table/Table';
 import Title from '../../components/Title';
 
-function Users() {
+function Developers() {
   const initialPagination = 4;
-  const paginationFromLocalStorage =
-    getItemFromLocalStorage('users-pagination');
+  const paginationFromLocalStorage = getItemFromLocalStorage(
+    'developers-pagination'
+  );
 
   const { t } = useTranslation('common');
 
   const [loading, setLoading] = useState<boolean>(true);
-  const [users, setUsers] = useState<User[]>([]);
-  const [usersCount, setUsersCount] = useState<number>(0);
+  const [developers, setDevelopers] = useState<Developer[]>([]);
+  const [developersCount, setDevelopersCount] = useState<number>(0);
   const [take, setTake] = useState<number>(
     paginationFromLocalStorage || initialPagination
   );
@@ -34,12 +35,12 @@ function Users() {
   ];
 
   useEffect(() => {
-    document.title = `${t('dev_team')} - ${t('users.plural_form')}`;
+    document.title = `${t('dev_team')} - ${t('developers.plural_form')}`;
 
-    getUsers();
+    getDevelopers();
   }, [take, skip, search]);
 
-  const getUsers = async () => {
+  const getDevelopers = async () => {
     const config = {
       params: {
         sort: 'id asc',
@@ -49,25 +50,25 @@ function Users() {
       },
     };
 
-    const response = await UsersAPI.getAll(config);
+    const response = await DevelopersAPI.getAll(config);
 
-    setUsers(response.users);
-    setUsersCount(response.count);
+    setDevelopers(response.developers);
+    setDevelopersCount(response.count);
 
     setLoading(false);
   };
 
   return (
     <Layout loading={loading}>
-      <Title>{t('users.plural_form')}</Title>
+      <Title>{t('developers.plural_form')}</Title>
       <Table
         styles="mt-10"
         columnNames={columnNames}
-        pageRows={users}
-        modelName="users"
+        pageRows={developers}
+        modelName="developers"
         take={take}
         skip={skip}
-        totalRowsCount={usersCount}
+        totalRowsCount={developersCount}
         initialPagination={initialPagination}
         goToPage={(page) => setSkip((page - 1) * take)}
         setPagination={(pagination) => {
@@ -80,4 +81,4 @@ function Users() {
   );
 }
 
-export default Users;
+export default Developers;

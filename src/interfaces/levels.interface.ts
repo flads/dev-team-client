@@ -1,7 +1,7 @@
 export interface Level {
   id?: number;
   name?: string;
-  users_count?: number;
+  developers_count?: number;
 }
 
 export interface LevelsAndCount {

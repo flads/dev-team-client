@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Levels from './pages/levels/Levels';
-import Users from './pages/users/Users';
+import Developer from './pages/developers/Developers';
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <Routes>
         <Route path="/">
           <Route index element={<Home />} />
-          <Route path="users" element={<Users />} />
+          <Route path="developers" element={<Developer />} />
           <Route path="levels" element={<Levels />} />
         </Route>
       </Routes>

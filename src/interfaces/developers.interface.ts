@@ -1,4 +1,4 @@
-export interface User {
+export interface Developer {
   id?: number;
   name?: string;
   gender?: string;
@@ -8,7 +8,7 @@ export interface User {
   level_id?: number;
 }
 
-export interface UsersAndCount {
-  users: User[];
+export interface DevelopersAndCount {
+  developers: Developer[];
   count: number;
 }

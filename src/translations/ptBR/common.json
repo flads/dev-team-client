@@ -22,13 +22,13 @@
     "per_page": "Por página",
     "search": "Pesquisar",
     "showing": "Exibindo",
-    "users": {
-        "edit_one": "Editar Usuário",
-        "no_records": "Não há registros de usuários!",
-        "per_page": "Usuários por página",
-        "plural_form": "Usuários",
-        "search_for": "Pesquisar por usuários",
-        "singular_form": "Usuário"
+    "developers": {
+        "edit_one": "Editar Desenvolvedor",
+        "no_records": "Não há registros de desenvolvedores!",
+        "per_page": "Desenvolvedores por página",
+        "plural_form": "Desenvolvedores",
+        "search_for": "Pesquisar por desenvolvedores",
+        "singular_form": "Desenvolvedor"
     },
-    "users_count": "Qtd. Usuários"
+    "developers_count": "Qtd. Desenvolvedores"
 }

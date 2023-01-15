@@ -1,9 +1,9 @@
 import { get } from '../request';
 import { RequestConfig } from '../../interfaces/request.interface';
-import { UsersAndCount } from '../../interfaces/users.interface';
+import { DevelopersAndCount } from '../../interfaces/developers.interface';
 
 export const getAll = async (
   config: RequestConfig = {}
-): Promise<UsersAndCount> => {
-  return get(config, 'users');
+): Promise<DevelopersAndCount> => {
+  return get(config, 'developers');
 };

@@ -25,7 +25,7 @@ function Levels() {
   const [skip, setSkip] = useState<number>(0);
   const [search, setSearch] = useState<string | null>(null);
 
-  const columnNames = ['id', 'name', 'users_count'];
+  const columnNames = ['id', 'name', 'developers_count'];
 
   useEffect(() => {
     document.title = `${t('dev_team')} - ${t('levels.plural_form')}`;

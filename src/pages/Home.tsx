@@ -13,7 +13,7 @@ function Home() {
   return (
     <Layout>
       <div className="flex flex-col sm:flex-row mt-10">
-        <HomeItem modelName="users" />
+        <HomeItem modelName="developers" />
         <HomeItem modelName="levels" />
       </div>
     </Layout>
