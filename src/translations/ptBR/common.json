@@ -8,7 +8,10 @@
     "level_id": "Id do nível",
     "level": "Nível",
     "name": "Nome",
+    "of": "De",
+    "per_page": "Por página",
     "search": "Pesquisar",
+    "showing": "Exibindo",
     "users": {
         "edit_one": "Editar Usuário",
         "no_records": "Não há registros de usuários!",

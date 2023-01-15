@@ -1,10 +1,9 @@
-import { MouseEventHandler } from 'react';
-
 export interface DropdownListProps {
   children?: React.ReactNode;
 }
 
 export interface DropdownItemProps {
+  isActive: boolean;
   children?: React.ReactNode;
-  onClick?: MouseEventHandler<HTMLDivElement>;
+  onClick?: React.MouseEventHandler<HTMLDivElement>;
 }

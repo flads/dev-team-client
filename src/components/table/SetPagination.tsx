@@ -6,10 +6,16 @@ import ChevronDown from '../icons/ChevronDown';
 import DropdownItem from '../DropdownItem';
 import DropdownList from '../DropdownList';
 
-function SetPagination({ modelName }: SetPaginationProps) {
+function SetPagination({
+  initialPagination,
+  modelName,
+  setPagination,
+}: SetPaginationProps) {
   const { t } = useTranslation('common');
 
   const [openDropdown, setOpenDropdown] = useState(false);
+  const [currentPagination, setCurrentPagination] =
+    useState<number>(initialPagination);
 
   useEffect(() => {
     closeDropdownOnClickOutside();
@@ -45,6 +51,12 @@ function SetPagination({ modelName }: SetPaginationProps) {
     });
   };
 
+  const onClickToSetPagination = (pagination: number) => {
+    setCurrentPagination(pagination);
+    setPagination(pagination);
+    setOpenDropdown(false);
+  };
+
   return (
     <div className="relative inline-block text-left" id="dropdown">
       <div>
@@ -54,10 +66,22 @@ function SetPagination({ modelName }: SetPaginationProps) {
       </div>
       {openDropdown && (
         <DropdownList>
-          <DropdownItem>10 por página</DropdownItem>
-          <DropdownItem>50 por página</DropdownItem>
-          <DropdownItem>100 por página</DropdownItem>
-          <DropdownItem>200 por página</DropdownItem>
+          {[
+            initialPagination,
+            initialPagination * 2,
+            initialPagination * 3,
+            initialPagination * 4,
+          ].map((pagination) => {
+            return (
+              <DropdownItem
+                isActive={Boolean(pagination === currentPagination)}
+                key={pagination}
+                onClick={() => onClickToSetPagination(pagination)}
+              >
+                {`${pagination} ${t('per_page').toLowerCase()}`}
+              </DropdownItem>
+            );
+          })}
         </DropdownList>
       )}
     </div>
