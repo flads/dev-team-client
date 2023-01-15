@@ -18,9 +18,7 @@ function Pagination({
   const [currentPage, setCurrentPage] = useState<number>(1);
 
   useEffect(() => {
-    if (currentPage > pageCount) {
-      setCurrentPage(pageCount);
-    }
+    setCurrentPage(1);
 
     setShowPagination(true);
   }, [take]);

@@ -64,7 +64,10 @@ function Users() {
           totalRowsCount={usersCount}
           initialPagination={initialPagination}
           goToPage={(page) => setSkip((page - 1) * take)}
-          setPagination={(pagination) => setTake(pagination)}
+          setPagination={(pagination) => {
+            setTake(pagination);
+            setSkip(0);
+          }}
           onSearch={(event) => setSearch(event.target.value)}
         />
       </div>
