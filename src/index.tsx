@@ -5,7 +5,7 @@ import i18next from 'i18next';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
-import './index.css';
+import './assets/css/index.css';
 
 i18next.init({
   interpolation: { escapeValue: false },

@@ -1,15 +1,16 @@
+import { getItemFromLocalStorage } from '../../services/local-storage';
 import { useEffect, useState } from 'react';
+import { User } from '../../interfaces/users.interface';
+import * as UsersAPI from '../../services/users/api';
 import Layout from '../../components/Layout';
 import Table from '../../components/table/Table';
-import * as UserAPI from '../../services/users/api';
-import { User } from '../../interfaces/users.interface';
-import { getItemFromLocalStorage } from '../../services/local-storage';
 
 function Users() {
   const initialPagination = 4;
   const paginationFromLocalStorage =
     getItemFromLocalStorage('users-pagination');
 
+  const [loading, setLoading] = useState<boolean>(true);
   const [users, setUsers] = useState<User[]>([]);
   const [usersCount, setUsersCount] = useState<number>(0);
   const [take, setTake] = useState<number>(
@@ -42,18 +43,16 @@ function Users() {
       },
     };
 
-    const response = await UserAPI.getAll(config);
+    const response = await UsersAPI.getAll(config);
 
     setUsers(response.users);
     setUsersCount(response.count);
+
+    setLoading(false);
   };
 
-  if (!users.length) {
-    return <Layout />;
-  }
-
   return (
-    <Layout>
+    <Layout loading={loading}>
       <div className="mt-10">
         <Table
           columnNames={columnNames}

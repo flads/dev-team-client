@@ -10,7 +10,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #f3f4f6;
-  background-image: url('./assets/images/background-waves.svg');
+  background-image: url('../images/background-waves.svg');
   background-position: bottom;
   background-size: 100% 15%;
   background-repeat: no-repeat;
