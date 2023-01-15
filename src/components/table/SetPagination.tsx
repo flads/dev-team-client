@@ -17,8 +17,8 @@ function SetPagination({
 }: SetPaginationProps) {
   const { t } = useTranslation('common');
 
-  const paginationFromLocalStorage =
-    getItemFromLocalStorage('users-pagination');
+  const localStorageKey = `${modelName}-pagination`;
+  const paginationFromLocalStorage = getItemFromLocalStorage(localStorageKey);
 
   const [openDropdown, setOpenDropdown] = useState(false);
   const [currentPagination, setCurrentPagination] = useState<number>(
@@ -60,7 +60,7 @@ function SetPagination({
   };
 
   const onClickToSetPagination = (pagination: number) => {
-    setItemInLocalStorage('users-pagination', pagination);
+    setItemInLocalStorage(localStorageKey, pagination);
     setCurrentPagination(pagination);
     setPagination(pagination);
     setOpenDropdown(false);
