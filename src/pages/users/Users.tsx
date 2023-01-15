@@ -1,6 +1,7 @@
 import { getItemFromLocalStorage } from '../../services/local-storage';
 import { useEffect, useState } from 'react';
 import { User } from '../../interfaces/users.interface';
+import { useTranslation } from 'react-i18next';
 import * as UsersAPI from '../../services/users/api';
 import Layout from '../../components/Layout';
 import Table from '../../components/table/Table';
@@ -9,6 +10,8 @@ function Users() {
   const initialPagination = 4;
   const paginationFromLocalStorage =
     getItemFromLocalStorage('users-pagination');
+
+  const { t } = useTranslation('common');
 
   const [loading, setLoading] = useState<boolean>(true);
   const [users, setUsers] = useState<User[]>([]);
@@ -30,6 +33,8 @@ function Users() {
   ];
 
   useEffect(() => {
+    document.title = `${t('dev_team')} - ${t('users.plural_form')}`;
+
     getUsers();
   }, [take, skip, search]);
 

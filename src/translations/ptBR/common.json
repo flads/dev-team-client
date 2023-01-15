@@ -2,9 +2,11 @@
     "action": "Ação",
     "age": "Idade",
     "birthdate": "Data de Nascimento",
+    "dev_team": "Dev Team",
     "edit": "Editar",
     "gender": "Sexo",
     "hobby": "Hobby",
+    "home": "Home",
     "level_id": "Id do nível",
     "level": "Nível",
     "levels": {

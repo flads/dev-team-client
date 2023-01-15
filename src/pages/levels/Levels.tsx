@@ -1,6 +1,7 @@
 import { getItemFromLocalStorage } from '../../services/local-storage';
 import { Level } from '../../interfaces/levels.interface';
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import * as LevelsAPI from '../../services/levels/api';
 import Layout from '../../components/Layout';
 import Table from '../../components/table/Table';
@@ -11,6 +12,8 @@ function Levels() {
   const paginationFromLocalStorage = getItemFromLocalStorage(
     `${modelName}-pagination`
   );
+
+  const { t } = useTranslation('common');
 
   const [loading, setLoading] = useState<boolean>(true);
   const [levels, setLevels] = useState<Level[]>([]);
@@ -24,6 +27,8 @@ function Levels() {
   const columnNames = ['id', 'name', 'users_count'];
 
   useEffect(() => {
+    document.title = `${t('dev_team')} - ${t('levels.plural_form')}`;
+
     getLevels();
   }, [take, skip, search]);
 
