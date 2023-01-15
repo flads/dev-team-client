@@ -16,7 +16,7 @@ function Row({ model, columnNames, modelName }: RowProps) {
           </td>
         );
       })}
-      <td className="py-4 px-6 select-none">
+      <td className="py-4 px-6 select-none w-3/12">
         <a
           href="#"
           type="button"
