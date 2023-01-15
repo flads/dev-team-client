@@ -5,6 +5,10 @@ import Button from '../Button';
 import ChevronDown from '../icons/ChevronDown';
 import DropdownItem from '../DropdownItem';
 import DropdownList from '../DropdownList';
+import {
+  getItemFromLocalStorage,
+  setItemInLocalStorage,
+} from '../../services/local-storage';
 
 function SetPagination({
   initialPagination,
@@ -13,9 +17,13 @@ function SetPagination({
 }: SetPaginationProps) {
   const { t } = useTranslation('common');
 
+  const paginationFromLocalStorage =
+    getItemFromLocalStorage('users-pagination');
+
   const [openDropdown, setOpenDropdown] = useState(false);
-  const [currentPagination, setCurrentPagination] =
-    useState<number>(initialPagination);
+  const [currentPagination, setCurrentPagination] = useState<number>(
+    paginationFromLocalStorage || initialPagination
+  );
 
   useEffect(() => {
     closeDropdownOnClickOutside();
@@ -52,6 +60,7 @@ function SetPagination({
   };
 
   const onClickToSetPagination = (pagination: number) => {
+    setItemInLocalStorage('users-pagination', pagination);
     setCurrentPagination(pagination);
     setPagination(pagination);
     setOpenDropdown(false);

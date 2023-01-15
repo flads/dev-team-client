@@ -3,13 +3,18 @@ import Layout from '../../components/Layout';
 import Table from '../../components/table/Table';
 import * as UserAPI from '../../services/users/api';
 import { User } from '../../interfaces/users.interface';
+import { getItemFromLocalStorage } from '../../services/local-storage';
 
 function Users() {
   const initialPagination = 4;
+  const paginationFromLocalStorage =
+    getItemFromLocalStorage('users-pagination');
 
   const [users, setUsers] = useState<User[]>([]);
   const [usersCount, setUsersCount] = useState<number>(0);
-  const [take, setTake] = useState<number>(initialPagination);
+  const [take, setTake] = useState<number>(
+    paginationFromLocalStorage || initialPagination
+  );
   const [skip, setSkip] = useState<number>(0);
   const [search, setSearch] = useState<string | null>(null);
 
@@ -42,6 +47,10 @@ function Users() {
     setUsers(response.users);
     setUsersCount(response.count);
   };
+
+  if (!users.length) {
+    return <Layout />;
+  }
 
   return (
     <Layout>
