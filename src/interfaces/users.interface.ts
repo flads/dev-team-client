@@ -1,10 +1,10 @@
 export interface User {
   id?: number;
-  name?: number;
-  gender?: number;
-  birthdate?: number;
+  name?: string;
+  gender?: string;
+  birthdate?: string;
   age?: number;
-  hobby?: number;
+  hobby?: string;
   level_id?: number;
 }
 
