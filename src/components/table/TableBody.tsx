@@ -21,7 +21,7 @@ function TableBody({ rows, columnNames, modelName }: TableBodyProps) {
     </tbody>
   ) : (
     <tbody>
-      <tr className="flex justify-center w-full text-sm p-4">
+      <tr className="flex justify-start w-full text-sm p-4">
         <td>{t(`${modelName}.no_records`)}</td>
       </tr>
     </tbody>

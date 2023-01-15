@@ -16,23 +16,25 @@ function Table({
   setPagination,
   onSearch,
 }: TableProps) {
+  const rowsCount = pageRows.length;
+
   return (
     <div>
       <div className="flex flex-col sm:flex-row items-center sm:items-start sm:justify-between">
-        <SetPagination
-          initialPagination={initialPagination}
-          modelName={modelName}
-          setPagination={setPagination}
-        />
+        {rowsCount ? (
+          <SetPagination
+            initialPagination={initialPagination}
+            modelName={modelName}
+            setPagination={setPagination}
+          />
+        ) : (
+          <div></div>
+        )}
         <Search modelName={modelName} onSearch={onSearch} />
       </div>
 
       <div className="overflow-x-auto relative shadow-md sm:rounded-lg">
-        <table
-          className={`w-full text-sm text-left text-gray-500 dark:text-gray-400 ${
-            !pageRows.length ? 'bg-white' : ''
-          }`}
-        >
+        <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400 bg-white">
           <TableHead columnNames={columnNames} />
           <TableBody
             rows={pageRows}
@@ -41,15 +43,15 @@ function Table({
           />
         </table>
       </div>
-      {pageRows.length ? (
+      {rowsCount ? (
         <Pagination
-          rowsCount={pageRows.length}
+          rowsCount={rowsCount}
           take={take}
           totalRowsCount={totalRowsCount}
           goToPage={goToPage}
         />
       ) : (
-        ''
+        <div></div>
       )}
     </div>
   );
