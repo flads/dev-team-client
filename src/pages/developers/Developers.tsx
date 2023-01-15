@@ -43,7 +43,7 @@ function Developers() {
   const getDevelopers = async () => {
     const config = {
       params: {
-        sort: 'id asc',
+        sort: 'id desc',
         take,
         skip,
         search,

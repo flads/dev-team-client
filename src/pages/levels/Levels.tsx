@@ -36,7 +36,7 @@ function Levels() {
   const getLevels = async () => {
     const config = {
       params: {
-        sort: 'id asc',
+        sort: 'id desc',
         take,
         skip,
         search,
