@@ -27,7 +27,6 @@ export interface TableBodyProps {
 export interface RowProps {
   model: ObjectLiteral;
   columnNames: string[];
-  modelName: string;
 }
 
 export interface ColumnProps {

@@ -10,7 +10,6 @@
     "level_id": "Id do nível",
     "level": "Nível",
     "levels": {
-        "edit_one": "Editar Nível",
         "no_records": "Não há registros de níveis!",
         "per_page": "Níveis por página",
         "plural_form": "Níveis",
@@ -23,7 +22,6 @@
     "search": "Pesquisar",
     "showing": "Exibindo",
     "developers": {
-        "edit_one": "Editar Desenvolvedor",
         "no_records": "Não há registros de desenvolvedores!",
         "per_page": "Desenvolvedores por página",
         "plural_form": "Desenvolvedores",

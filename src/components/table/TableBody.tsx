@@ -9,14 +9,7 @@ function TableBody({ rows, columnNames, modelName }: TableBodyProps) {
   return rows.length ? (
     <tbody>
       {rows.map((row: ObjectLiteral) => {
-        return (
-          <Row
-            key={row.id}
-            columnNames={columnNames}
-            model={row}
-            modelName={modelName}
-          />
-        );
+        return <Row key={row.id} columnNames={columnNames} model={row} />;
       })}
     </tbody>
   ) : (
