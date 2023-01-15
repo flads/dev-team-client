@@ -7,6 +7,14 @@
     "hobby": "Hobby",
     "level_id": "Id do nível",
     "level": "Nível",
+    "levels": {
+        "edit_one": "Editar Nível",
+        "no_records": "Não há registros de níveis!",
+        "per_page": "Níveis por página",
+        "plural_form": "Níveis",
+        "search_for": "Pesquisar por níveis",
+        "singular_form": "Nível"
+    },
     "name": "Nome",
     "of": "De",
     "per_page": "Por página",
@@ -19,5 +27,6 @@
         "plural_form": "Usuários",
         "search_for": "Pesquisar por usuários",
         "singular_form": "Usuário"
-    }
+    },
+    "users_count": "Qtd. Usuários"
 }

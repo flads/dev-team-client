@@ -6,7 +6,7 @@ function Home() {
     <Layout>
       <div className="flex flex-col sm:flex-row mt-10">
         <HomeItem modelName="users" />
-        <HomeItem title="Níveis" />
+        <HomeItem modelName="levels" />
       </div>
     </Layout>
   );
