@@ -1,18 +1,15 @@
-import { useNavigate } from 'react-router-dom';
 import HomeItem from '../components/home/HomeItem';
 import Layout from '../components/Layout';
 
-function Uploads() {
-  const navigate = useNavigate();
-
+function Home() {
   return (
     <Layout>
       <div className="flex flex-col sm:flex-row mt-10">
-        <HomeItem title="Usuários" onClick={() => navigate('/users')} />
+        <HomeItem modelName="users" />
         <HomeItem title="Níveis" />
       </div>
     </Layout>
   );
 }
 
-export default Uploads;
+export default Home;
