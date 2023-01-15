@@ -7,9 +7,12 @@ function Row({ model, columnNames, modelName }: RowProps) {
   return (
     <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
       {columnNames.map((name) => {
+        const value =
+          typeof model[name] === 'number' ? model[name] : model[name] || '-';
+
         return (
           <td key={name} className="py-4 px-6">
-            {model[name] || '-'}
+            {value}
           </td>
         );
       })}
