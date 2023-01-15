@@ -67,7 +67,7 @@ function SetPagination({
   };
 
   return (
-    <div className="relative inline-block text-left" id="dropdown">
+    <div className="relative inline-block text-left select-none" id="dropdown">
       <div>
         <Button onClick={() => setOpenDropdown(!openDropdown)}>
           {t(`${modelName}.per_page`)} <ChevronDown />

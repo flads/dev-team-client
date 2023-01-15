@@ -6,7 +6,7 @@ function Nav() {
 
   return (
     <>
-      <nav className="flex justify-center sm:justify-start">
+      <nav className="flex justify-center sm:justify-start select-none">
         <div
           className="p-2 flex justify-center sm:justify-start items-center gap-x-2 text-blue-600 font-medium text-base pl-4 cursor-pointer"
           onClick={() => navigate('/')}

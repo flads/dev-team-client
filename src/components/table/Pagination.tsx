@@ -122,7 +122,7 @@ function Pagination({
 
   return (
     <nav
-      className="flex flex-col sm:flex-row items-center sm:justify-between py-4 px-2"
+      className="flex flex-col sm:flex-row items-center sm:justify-between py-4 px-2 select-none"
       aria-label="Table navigation"
     >
       <ShowingOf />
