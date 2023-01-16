@@ -1,8 +1,9 @@
+import { Developer } from '../../interfaces/developers.interface';
 import { getItemFromLocalStorage } from '../../services/local-storage';
 import { useEffect, useState } from 'react';
-import { Developer } from '../../interfaces/developers.interface';
 import { useTranslation } from 'react-i18next';
 import * as DevelopersAPI from '../../services/developers/api';
+import AddIcon from '../../components/icons/Add';
 import Layout from '../../components/Layout';
 import Table from '../../components/table/Table';
 import Title from '../../components/Title';
@@ -60,9 +61,12 @@ function Developers() {
 
   return (
     <Layout loading={loading}>
-      <Title>{t('developers.plural_form')}</Title>
+      <div className="mt-4 sm:mt-10 w-full flex justify-between items-center text-center">
+        <Title>{t('developers.plural_form')}</Title>
+        <AddIcon />
+      </div>
       <Table
-        styles="mt-10"
+        styles="mt-6 sm:mt-10"
         columnNames={columnNames}
         pageRows={developers}
         modelName="developers"
