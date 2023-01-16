@@ -36,6 +36,12 @@ Install the dependencies:
 cd dev-team-client && npm i
 ```
 
+Create your .env file:
+
+```sh
+cp .env.example .env
+```
+
 Start the server:
 
 ```sh
