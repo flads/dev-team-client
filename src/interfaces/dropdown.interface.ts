@@ -7,3 +7,8 @@ export interface DropdownItemProps {
   children?: React.ReactNode;
   onClick?: React.MouseEventHandler<HTMLDivElement>;
 }
+
+export interface ButtonProps {
+  children?: React.ReactNode;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+}

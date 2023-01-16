@@ -7,6 +7,7 @@ import AddIcon from '../../components/icons/Add';
 import Layout from '../../components/Layout';
 import Table from '../../components/table/Table';
 import Title from '../../components/Title';
+import CreateDeveloper from '../../modals/developers/CreateDeveloper';
 
 function Developers() {
   const initialPagination = 4;
@@ -24,6 +25,8 @@ function Developers() {
   );
   const [skip, setSkip] = useState<number>(0);
   const [search, setSearch] = useState<string | null>(null);
+  const [showCreateDeveloperModal, setShowCreateDeveloperModal] =
+    useState<boolean>(false);
 
   const columnNames = [
     'id',
@@ -61,9 +64,14 @@ function Developers() {
 
   return (
     <Layout loading={loading}>
+      {showCreateDeveloperModal && (
+        <CreateDeveloper
+          closeModal={() => setShowCreateDeveloperModal(false)}
+        />
+      )}
       <div className="mt-4 sm:mt-10 w-full flex justify-between items-center text-center">
         <Title>{t('developers.plural_form')}</Title>
-        <AddIcon />
+        <AddIcon onClick={() => setShowCreateDeveloperModal(true)} />
       </div>
       <Table
         styles="mt-6 sm:mt-10"

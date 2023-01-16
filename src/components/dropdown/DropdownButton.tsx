@@ -1,6 +1,6 @@
-import { ButtonProps } from '../interfaces/components/button.interface';
+import { ButtonProps } from '../../interfaces/dropdown.interface';
 
-function Button({ children, onClick }: ButtonProps) {
+function DropdownButton({ children, onClick }: ButtonProps) {
   return (
     <button
       type="button"
@@ -15,4 +15,4 @@ function Button({ children, onClick }: ButtonProps) {
   );
 }
 
-export default Button;
+export default DropdownButton;

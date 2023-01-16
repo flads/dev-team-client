@@ -1,4 +1,4 @@
-import { DropdownItemProps } from '../interfaces/dropdown.interface';
+import { DropdownItemProps } from '../../interfaces/dropdown.interface';
 
 function DropdownItem({ isActive, children, onClick }: DropdownItemProps) {
   return (

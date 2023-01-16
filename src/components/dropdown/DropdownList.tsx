@@ -1,4 +1,4 @@
-import { DropdownListProps } from '../interfaces/dropdown.interface';
+import { DropdownListProps } from '../../interfaces/dropdown.interface';
 
 function DropdownList({ children }: DropdownListProps) {
   return (

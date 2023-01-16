@@ -1,10 +1,10 @@
 import { SetPaginationProps } from '../../interfaces/components/table.interface';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import Button from '../Button';
 import ChevronDownIcon from '../icons/ChevronDown';
-import DropdownItem from '../DropdownItem';
-import DropdownList from '../DropdownList';
+import DropdownButton from '../dropdown/DropdownButton';
+import DropdownItem from '../dropdown/DropdownItem';
+import DropdownList from '../dropdown/DropdownList';
 import {
   getItemFromLocalStorage,
   setItemInLocalStorage,
@@ -69,9 +69,9 @@ function SetPagination({
   return (
     <div className="relative inline-block text-left select-none" id="dropdown">
       <div>
-        <Button onClick={() => setOpenDropdown(!openDropdown)}>
+        <DropdownButton onClick={() => setOpenDropdown(!openDropdown)}>
           {t(`${modelName}.per_page`)} <ChevronDownIcon />
-        </Button>
+        </DropdownButton>
       </div>
       {openDropdown && (
         <DropdownList>
