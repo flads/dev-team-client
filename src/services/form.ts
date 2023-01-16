@@ -1,5 +1,15 @@
 import { ObjectLiteral } from '../interfaces/object-literal';
 
+export function removeEmptyValues(data: ObjectLiteral): ObjectLiteral {
+  for (const property of Object.entries(data)) {
+    if (!property.pop()) {
+      delete data[property.shift()];
+    }
+  }
+
+  return data;
+}
+
 export function handleChange(
   form: ObjectLiteral,
   event: any

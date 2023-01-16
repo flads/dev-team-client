@@ -2,6 +2,7 @@ import { InputProps } from '../../interfaces/components/forms.interface';
 
 function Input({
   type,
+  maxLength,
   preSpan,
   name,
   id,
@@ -28,10 +29,11 @@ function Input({
         )}
         <input
           type={type}
+          maxLength={maxLength}
           name={name}
           id={id}
           className={className}
-          value={value}
+          value={value || ''}
           onChange={onChange}
           placeholder={placeholder}
         />

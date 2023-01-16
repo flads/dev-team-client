@@ -3,7 +3,7 @@ import { FormGroupProps } from '../../interfaces/components/forms.interface';
 function FormGroup({ gridColsClass, children }: FormGroupProps) {
   if (Array.isArray(children)) {
     return (
-      <div className={`grid ${gridColsClass}`}>
+      <div className={`grid ${gridColsClass} gap-4`}>
         {children?.map((child, index) => {
           return <div key={index}>{child}</div>;
         })}
@@ -12,7 +12,7 @@ function FormGroup({ gridColsClass, children }: FormGroupProps) {
   }
 
   return (
-    <div className="grid">
+    <div className={`grid ${gridColsClass} gap-4`}>
       <div>{children}</div>
     </div>
   );

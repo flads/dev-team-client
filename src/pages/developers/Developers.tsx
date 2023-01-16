@@ -4,10 +4,12 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import * as DevelopersAPI from '../../services/developers/api';
 import AddIcon from '../../components/icons/Add';
+import CreateDeveloper from '../../modals/developers/CreateDeveloper';
+import ErrorToast from '../../components/forms/ErrorToast copy';
 import Layout from '../../components/Layout';
+import SuccessToast from '../../components/forms/SuccessToast';
 import Table from '../../components/table/Table';
 import Title from '../../components/Title';
-import CreateDeveloper from '../../modals/developers/CreateDeveloper';
 
 function Developers() {
   const initialPagination = 4;
@@ -27,6 +29,9 @@ function Developers() {
   const [search, setSearch] = useState<string | null>(null);
   const [showCreateDeveloperModal, setShowCreateDeveloperModal] =
     useState<boolean>(false);
+  const [showSuccessToast, setShowSuccessToast] = useState<boolean>(false);
+  const [showErrorToast, setShowErrorToast] = useState<boolean>(false);
+  const [toastMessage, setToastMessage] = useState<string>('');
 
   const columnNames = [
     'id',
@@ -64,8 +69,27 @@ function Developers() {
 
   return (
     <Layout loading={loading}>
+      <SuccessToast
+        message={toastMessage}
+        show={showSuccessToast}
+        onClose={() => setShowSuccessToast(false)}
+      />
+      <ErrorToast
+        message={toastMessage}
+        show={showErrorToast}
+        onClose={() => setShowErrorToast(false)}
+      />
       {showCreateDeveloperModal && (
         <CreateDeveloper
+          onSuccess={(message: string) => {
+            setToastMessage(message);
+            setShowSuccessToast(true);
+            getDevelopers();
+          }}
+          onError={(message: string) => {
+            setToastMessage(message);
+            setShowErrorToast(true);
+          }}
           closeModal={() => setShowCreateDeveloperModal(false)}
         />
       )}

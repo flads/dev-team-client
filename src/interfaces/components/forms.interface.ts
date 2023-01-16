@@ -28,10 +28,11 @@ export interface LabelProps {
 
 export interface InputProps {
   type: string;
+  maxLength?: number;
   preSpan?: string;
   name: string;
   id: string;
-  value?: string;
+  value?: string | number | null;
   placeholder?: string;
   copy?: boolean;
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
@@ -55,4 +56,10 @@ export interface DeleteButtonProps {
   modalContent: ModalContentProps;
   loadingButton?: boolean;
   onConfirm: React.MouseEventHandler<HTMLButtonElement>;
+}
+
+export interface ToastProps {
+  message: string;
+  show: boolean;
+  onClose: () => void;
 }

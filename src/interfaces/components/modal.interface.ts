@@ -18,5 +18,7 @@ export interface ModalProps {
 }
 
 export interface CreateDeveloper {
+  onSuccess: (message: string) => void;
+  onError: (message: string) => void;
   closeModal: React.MouseEventHandler<HTMLButtonElement>;
 }
