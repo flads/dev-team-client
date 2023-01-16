@@ -1,4 +1,4 @@
-function ChevronDown() {
+function ChevronDownIcon() {
   return (
     <svg
       className="-mr-1 ml-2 h-5 w-5"
@@ -16,4 +16,4 @@ function ChevronDown() {
   );
 }
 
-export default ChevronDown;
+export default ChevronDownIcon;

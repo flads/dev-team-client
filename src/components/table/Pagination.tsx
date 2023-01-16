@@ -1,8 +1,8 @@
 import { PaginationProps } from '../../interfaces/components/table.interface';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import ChevronLeft from '../icons/ChevronLeft';
-import ChevronRight from '../icons/ChevronRight';
+import ChevronLeftIcon from '../icons/ChevronLeft';
+import ChevronRightIcon from '../icons/ChevronRight';
 
 function Pagination({
   rowsCount,
@@ -129,13 +129,13 @@ function Pagination({
 
       <ul className="inline-flex items-center -space-x-px mt-2 sm:mt-0">
         <PageButton goToPage={currentPage - 1} styles="rounded-l-lg">
-          <ChevronLeft />
+          <ChevronLeftIcon />
         </PageButton>
 
         {pageButtons()}
 
         <PageButton goToPage={currentPage + 1} styles="rounded-r-lg">
-          <ChevronRight />
+          <ChevronRightIcon />
         </PageButton>
       </ul>
     </nav>

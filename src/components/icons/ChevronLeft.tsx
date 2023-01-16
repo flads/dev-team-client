@@ -1,4 +1,4 @@
-function ChevronLeft() {
+function ChevronLeftIcon() {
   return (
     <svg
       className="w-5 h-5"
@@ -16,4 +16,4 @@ function ChevronLeft() {
   );
 }
 
-export default ChevronLeft;
+export default ChevronLeftIcon;

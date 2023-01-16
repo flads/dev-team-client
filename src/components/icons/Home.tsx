@@ -1,6 +1,6 @@
 import { ClickableIcon } from '../../interfaces/components/icons.interface';
 
-function Home({ onClick }: ClickableIcon) {
+function HomeIcon({ onClick }: ClickableIcon) {
   return (
     <svg
       className="w-8"
@@ -20,4 +20,4 @@ function Home({ onClick }: ClickableIcon) {
   );
 }
 
-export default Home;
+export default HomeIcon;

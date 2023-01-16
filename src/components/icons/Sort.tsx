@@ -1,6 +1,6 @@
 import { ClickableIcon } from '../../interfaces/components/icons.interface';
 
-function Sort({ onClick }: ClickableIcon) {
+function SortIcon({ onClick }: ClickableIcon) {
   return (
     <svg
       className="ml-1 w-3 h-3"
@@ -16,4 +16,4 @@ function Sort({ onClick }: ClickableIcon) {
   );
 }
 
-export default Sort;
+export default SortIcon;

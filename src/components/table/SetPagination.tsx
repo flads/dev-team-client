@@ -2,7 +2,7 @@ import { SetPaginationProps } from '../../interfaces/components/table.interface'
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Button from '../Button';
-import ChevronDown from '../icons/ChevronDown';
+import ChevronDownIcon from '../icons/ChevronDown';
 import DropdownItem from '../DropdownItem';
 import DropdownList from '../DropdownList';
 import {
@@ -70,7 +70,7 @@ function SetPagination({
     <div className="relative inline-block text-left select-none" id="dropdown">
       <div>
         <Button onClick={() => setOpenDropdown(!openDropdown)}>
-          {t(`${modelName}.per_page`)} <ChevronDown />
+          {t(`${modelName}.per_page`)} <ChevronDownIcon />
         </Button>
       </div>
       {openDropdown && (
