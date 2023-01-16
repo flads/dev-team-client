@@ -39,6 +39,15 @@ export interface InputProps {
   isEditing?: boolean;
 }
 
+export interface SelectProps {
+  name: string;
+  id: string;
+  value?: string | number | null;
+  items: { id: number; name: string }[];
+  onChange?: React.ChangeEventHandler<HTMLSelectElement>;
+  isEditing?: boolean;
+}
+
 export interface ButtonProps {
   text?: string;
   loadingText?: string;

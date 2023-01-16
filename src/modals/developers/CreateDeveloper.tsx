@@ -1,12 +1,15 @@
 import { CreateDeveloper as CreateDeveloperInterface } from '../../interfaces/components/modal.interface';
 import { Developer } from '../../interfaces/developers.interface';
-import { useState } from 'react';
+import { getAllForSelect } from '../../services/levels/api';
+import { LevelForSelect } from '../../interfaces/levels.interface';
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import * as DevelopersAPI from '../../services/developers/api';
 import FormGroup from '../../components/forms/FormGroup';
 import Input from '../../components/forms/Input';
 import Label from '../../components/forms/Label';
 import Modal from '../../components/Modal';
+import Select from '../../components/forms/Select';
 import {
   handleChange as _handleChange,
   removeEmptyValues,
@@ -19,6 +22,7 @@ function CreateDeveloper({
 }: CreateDeveloperInterface) {
   const { t } = useTranslation('common');
 
+  const [levels, setLevels] = useState<LevelForSelect[] | never[]>([]);
   const [developerForm, setDeveloperForm] = useState<Developer>({
     name: '',
     gender: '',
@@ -27,6 +31,16 @@ function CreateDeveloper({
     level_id: 1,
   });
   const [loadingButton, setLoadingButton] = useState<boolean>(false);
+
+  useEffect(() => {
+    getLevels();
+  }, []);
+
+  const getLevels = async () => {
+    const levels = await getAllForSelect();
+
+    setLevels(levels);
+  };
 
   const handleChange = (event: any) => {
     const formUpdated = _handleChange(developerForm, event);
@@ -133,14 +147,12 @@ function CreateDeveloper({
             <Label required={true} htmlFor="level_id">
               {t('level')}
             </Label>
-            <Input
-              type="text"
-              maxLength={2}
+            <Select
               name="level_id"
               id="level_id"
               value={developerForm.level_id}
+              items={levels}
               onChange={(event) => handleChange(event)}
-              placeholder={t('developers.placeholders.level') as string}
               isEditing={true}
             />
           </div>

@@ -8,3 +8,8 @@ export interface LevelsAndCount {
   levels: Level[];
   count: number;
 }
+
+export interface LevelForSelect {
+  id: number;
+  name: string;
+}
