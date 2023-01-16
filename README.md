@@ -1,46 +1,56 @@
-# Getting Started with Create React App
+# Dev Team Client
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/flads/nestjs-boilerplate/pulls)
 
-## Available Scripts
+Front end for Developer and Level cruds.
 
-In the project directory, you can run:
+  - List Developers.
+  - Create Developers.
+  - List Levels.
+  - Create Levels.
 
-### `npm start`
+### Tech
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Technologies used in this project:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+* [TypeScript](https://github.com/microsoft/TypeScript) - TypeScript is a superset of JavaScript that compiles to clean JavaScript output.
+* [React](https://github.com/facebook/react) - A declarative, efficient, and flexible JavaScript library for building user interfaces.
+* [React Router](https://github.com/remix-run/react-router) - Declarative routing for React.
+* [react-i18next](https://github.com/i18next/react-i18next) - Internationalization for react done right.
+* [Axios](https://github.com/axios/axios) - Promise based HTTP client for the browser and node.js.
 
-### `npm test`
+And of course Dev Team Client itself is open source with a [public repository](https://github.com/flads/dev-team-client) on GitHub.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Installation
 
-### `npm run build`
+Clone the repository:
+```sh
+git clone git@github.com:flads/dev-team-client.git
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Install the dependencies:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```sh
+cd dev-team-client && npm i
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
 
-### `npm run eject`
+Start the server:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```sh
+npm run start
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Swagger
+Access the project at *http://localhost:8080/*.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Development
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Want to contribute? Great!
+Feel free!
 
-## Learn More
+License
+----
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+MIT
