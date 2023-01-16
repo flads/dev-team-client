@@ -1,5 +1,6 @@
-import { get } from '../request';
+import { get, post } from '../request';
 import {
+  Level,
   LevelForSelect,
   LevelsAndCount,
 } from '../../interfaces/levels.interface';
@@ -15,4 +16,8 @@ export const getAllForSelect = async (
   config: RequestConfig = {}
 ): Promise<LevelForSelect[]> => {
   return get(config, 'levels/for-select');
+};
+
+export const create = async (data: Level): Promise<Level> => {
+  return post({}, 'levels', data);
 };

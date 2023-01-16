@@ -17,7 +17,7 @@ export interface ModalProps {
   children?: React.ReactNode;
 }
 
-export interface CreateDeveloper {
+export interface CreateModal {
   onSuccess: (message: string) => void;
   onError: (message: string) => void;
   closeModal: React.MouseEventHandler<HTMLButtonElement>;

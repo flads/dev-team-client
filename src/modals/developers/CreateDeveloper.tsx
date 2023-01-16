@@ -1,4 +1,4 @@
-import { CreateDeveloper as CreateDeveloperInterface } from '../../interfaces/components/modal.interface';
+import { CreateModal } from '../../interfaces/components/modal.interface';
 import { Developer } from '../../interfaces/developers.interface';
 import { getAllForSelect } from '../../services/levels/api';
 import { LevelForSelect } from '../../interfaces/levels.interface';
@@ -15,11 +15,7 @@ import {
   removeEmptyValues,
 } from '../../services/form';
 
-function CreateDeveloper({
-  onSuccess,
-  onError,
-  closeModal,
-}: CreateDeveloperInterface) {
+function CreateDeveloper({ onSuccess, onError, closeModal }: CreateModal) {
   const { t } = useTranslation('common');
 
   const [levels, setLevels] = useState<LevelForSelect[] | never[]>([]);
@@ -76,7 +72,7 @@ function CreateDeveloper({
 
   return (
     <Modal
-      content={{ title: t('developers.add'), cancel: t('cancelar') as string }}
+      content={{ title: t('developers.add'), cancel: t('cancel') as string }}
       width={'2/4'}
       loadingButton={loadingButton}
       disableConfirmButton={disableSubmitButton()}

@@ -53,7 +53,7 @@ function Modal({
         id="modalBackground"
         className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
       >
-        <div id="modalCard" className={`relative w-${width} my-6`}>
+        <div id="modalCard" className={`relative sm:w-${width} my-6 mx-2`}>
           <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
             <div className="flex items-center justify-between p-4 rounded">
               <h3 className={`font-medium ${children && 'text-lg'}`}>

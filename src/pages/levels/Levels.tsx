@@ -3,7 +3,11 @@ import { Level } from '../../interfaces/levels.interface';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import * as LevelsAPI from '../../services/levels/api';
+import AddIcon from '../../components/icons/Add';
+import CreateLevel from '../../modals/levels/CreateLevel';
+import ErrorToast from '../../components/forms/ErrorToast copy';
 import Layout from '../../components/Layout';
+import SuccessToast from '../../components/forms/SuccessToast';
 import Table from '../../components/table/Table';
 import Title from '../../components/Title';
 
@@ -24,6 +28,11 @@ function Levels() {
   );
   const [skip, setSkip] = useState<number>(0);
   const [search, setSearch] = useState<string | null>(null);
+  const [showCreateLevelModal, setShowCreateLevelModal] =
+    useState<boolean>(false);
+  const [showSuccessToast, setShowSuccessToast] = useState<boolean>(false);
+  const [showErrorToast, setShowErrorToast] = useState<boolean>(false);
+  const [toastMessage, setToastMessage] = useState<string>('');
 
   const columnNames = ['id', 'name', 'developers_count'];
 
@@ -53,8 +62,33 @@ function Levels() {
 
   return (
     <Layout loading={loading}>
+      <SuccessToast
+        message={toastMessage}
+        show={showSuccessToast}
+        onClose={() => setShowSuccessToast(false)}
+      />
+      <ErrorToast
+        message={toastMessage}
+        show={showErrorToast}
+        onClose={() => setShowErrorToast(false)}
+      />
+      {showCreateLevelModal && (
+        <CreateLevel
+          onSuccess={(message: string) => {
+            setToastMessage(message);
+            setShowSuccessToast(true);
+            getLevels();
+          }}
+          onError={(message: string) => {
+            setToastMessage(message);
+            setShowErrorToast(true);
+          }}
+          closeModal={() => setShowCreateLevelModal(false)}
+        />
+      )}
       <div className="mt-4 sm:mt-10 w-full flex justify-between items-center text-center">
         <Title>{t('levels.plural_form')}</Title>
+        <AddIcon onClick={() => setShowCreateLevelModal(true)} />
       </div>
       <Table
         styles="mt-6 sm:mt-10"

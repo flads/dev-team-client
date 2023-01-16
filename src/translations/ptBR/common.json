@@ -6,12 +6,12 @@
     "dev_team": "Dev Team",
     "developers": {
         "add": "Adicionar Desenvolvedor",
-        "successfully_created": "Desenvolvedor criado com sucesso!",
         "no_records": "Não há registros de desenvolvedores!",
         "per_page": "Desenvolvedores por página",
         "plural_form": "Desenvolvedores",
         "search_for": "Pesquisar por desenvolvedores",
         "singular_form": "Desenvolvedor",
+        "successfully_created": "Desenvolvedor criado com sucesso!",
         "placeholders": {
             "name": "Ex: John Doe",
             "gender": "Ex: Masculino",
@@ -28,11 +28,16 @@
     "level_id": "Id do nível",
     "level": "Nível",
     "levels": {
+        "add": "Adicionar Nível",
         "no_records": "Não há registros de níveis!",
         "per_page": "Níveis por página",
         "plural_form": "Níveis",
         "search_for": "Pesquisar por níveis",
-        "singular_form": "Nível"
+        "singular_form": "Nível",
+        "successfully_created": "Nível criado com sucesso!",
+        "placeholders": {
+            "name": "Ex: Pleno"
+        }
     },
     "name": "Nome",
     "of": "De",
