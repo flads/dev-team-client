@@ -34,8 +34,6 @@ Install the dependencies:
 cd dev-team-client && npm i
 ```
 
-```
-
 Start the server:
 
 ```sh
