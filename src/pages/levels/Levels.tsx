@@ -53,9 +53,11 @@ function Levels() {
 
   return (
     <Layout loading={loading}>
-      <Title>{t('levels.plural_form')}</Title>
+      <div className="mt-4 sm:mt-10 w-full flex justify-between items-center text-center">
+        <Title>{t('levels.plural_form')}</Title>
+      </div>
       <Table
-        styles="mt-10"
+        styles="mt-6 sm:mt-10"
         columnNames={columnNames}
         pageRows={levels}
         modelName={modelName}
