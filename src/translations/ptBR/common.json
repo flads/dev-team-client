@@ -3,6 +3,14 @@
     "age": "Idade",
     "birthdate": "Data de Nascimento",
     "dev_team": "Dev Team",
+    "developers": {
+        "no_records": "Não há registros de desenvolvedores!",
+        "per_page": "Desenvolvedores por página",
+        "plural_form": "Desenvolvedores",
+        "search_for": "Pesquisar por desenvolvedores",
+        "singular_form": "Desenvolvedor"
+    },
+    "developers_count": "Qtd. Desenvolvedores",
     "edit": "Editar",
     "gender": "Sexo",
     "hobby": "Hobby",
@@ -20,13 +28,5 @@
     "of": "De",
     "per_page": "Por página",
     "search": "Pesquisar",
-    "showing": "Exibindo",
-    "developers": {
-        "no_records": "Não há registros de desenvolvedores!",
-        "per_page": "Desenvolvedores por página",
-        "plural_form": "Desenvolvedores",
-        "search_for": "Pesquisar por desenvolvedores",
-        "singular_form": "Desenvolvedor"
-    },
-    "developers_count": "Qtd. Desenvolvedores"
+    "showing": "Exibindo"
 }

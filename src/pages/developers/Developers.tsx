@@ -31,7 +31,7 @@ function Developers() {
     'birthdate',
     'age',
     'hobby',
-    'level_id',
+    'level',
   ];
 
   useEffect(() => {
@@ -43,7 +43,7 @@ function Developers() {
   const getDevelopers = async () => {
     const config = {
       params: {
-        sort: 'id desc',
+        sort: 'developers.id desc',
         take,
         skip,
         search,
